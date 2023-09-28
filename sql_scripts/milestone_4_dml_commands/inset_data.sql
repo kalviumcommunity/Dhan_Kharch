@@ -18,10 +18,10 @@ INSERT INTO Categories (category_name) VALUES
 ('Utilities');
 
 INSERT INTO Budgets (budget_ID, category_ID, budget_amount, start_date, end_date) VALUES
-(1, 1, 1000.00, '2022-01-01', '2022-12-31'),
-(2, 2, 500.00, '2022-01-01', '2022-12-31'),
-(3, 3, 750.00, '2022-01-01', '2022-12-31'),
-(4, 4, 200.00, '2022-01-01', '2022-12-31');
+(1, 1, 1000.00, '2022-01-01', '2022-02-28'),
+(2, 2, 500.00, '2022-01-01', '2022-02-28'),
+(3, 3, 750.00, '2022-01-01', '2022-02-28'),
+(4, 4, 200.00, '2022-01-01', '2022-02-28');
 
 INSERT INTO UserBudgets (user_budget_ID, user_ID, budget_ID) VALUES
 (1, 1, 1),
