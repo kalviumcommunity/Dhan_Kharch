@@ -51,7 +51,7 @@ END;
 DELETE FROM Transactions WHERE transaction_ID = 5;
 
 -- Select all transactions for the current month
-SELECT * FROM Transactions WHERE MONTH(date_time) = MONTH(CURRENT_DATE());
+SELECT * FROM Transactions WHERE MONTH(date) = MONTH(CURRENT_DATE());
 
 -- Select the total amount of income and expenses for each account
 SELECT account_no, SUM(CASE WHEN type = 'income' THEN amount ELSE 0 END) AS total_income, SUM(CASE WHEN type = 'expense' THEN amount ELSE 0 END) AS total_expenses FROM Transactions GROUP BY account_no;
