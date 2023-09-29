@@ -38,3 +38,20 @@ INSERT INTO Transactions (account_no, date, description, type, amount, budget_ID
 (1001, '2022-01-04 09:00:00', 'Electricity bill', 'expense', 50.00, 4),
 (1002, '2022-01-05 14:00:00', 'Salary', 'income', 5000.00, NULL),
 (1003, '2022-01-06 11:00:00', 'Internet bill', 'expense', 30.00, 4);
+
+-- Update the balance of each account based on the transactions
+UPDATE Accounts AS a
+JOIN Transactions AS t ON a.account_no = t.account_no
+SET a.balance = CASE
+    WHEN t.type = 'expense' THEN a.balance - t.amount
+    WHEN t.type = 'income' THEN a.balance + t.amount
+END;
+
+-- Delete the transaction with transaction_ID = 2
+DELETE FROM Transactions WHERE transaction_ID = 5;
+
+-- Select all transactions for the current month
+SELECT * FROM Transactions WHERE MONTH(date_time) = MONTH(CURRENT_DATE());
+
+-- Select the total amount of income and expenses for each account
+SELECT account_no, SUM(CASE WHEN type = 'income' THEN amount ELSE 0 END) AS total_income, SUM(CASE WHEN type = 'expense' THEN amount ELSE 0 END) AS total_expenses FROM Transactions GROUP BY account_no;
