@@ -23,7 +23,7 @@ INNER JOIN Categories C ON B.category_ID = C.category_ID
 LEFT JOIN Transactions T ON B.budget_ID = T.budget_ID
 INNER JOIN UserBudgets UB ON B.budget_ID = UB.budget_ID
 WHERE B.start_date <= NOW() AND B.end_date >= NOW()
-AND UB.user_ID = 1 -- Replace with the desired user_ID
+AND UB.user_ID = 1
 GROUP BY B.budget_ID, C.category_name, B.budget_amount;
 
 -- Find Transactions Exceeding Budgets
@@ -32,7 +32,7 @@ FROM Transactions T
 INNER JOIN Budgets B ON T.budget_ID = B.budget_ID
 INNER JOIN Categories C ON B.category_ID = C.category_ID
 INNER JOIN Accounts A ON T.account_no = A.account_no
-WHERE A.user_ID = 1 -- Replace with the desired user_ID
+WHERE A.user_ID = 1
 AND T.type = 'expense'
 AND T.amount > B.budget_amount;
 
