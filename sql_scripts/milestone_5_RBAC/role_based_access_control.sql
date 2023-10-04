@@ -1,3 +1,4 @@
+-- Active: 1695541481884@@127.0.0.1@3306@Dhan_Kharch
 -- Delete existing roles
 DROP ROLE IF EXISTS dk_admin@localhost;
 DROP ROLE IF EXISTS dk_manager@localhost;
