@@ -35,7 +35,6 @@ REVOKE DELETE ON dhan_kharch.Users FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Accounts FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Budgets FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Categories FROM dk_user@localhost;
-REVOKE DELETE ON dhan_kharch.UserBudgets FROM dk_user@localhost;
 
 -- Grant privileges to dk_guest role
 GRANT SELECT ON dhan_kharch.* TO dk_guest@localhost;
