@@ -1,4 +1,3 @@
--- Active: 1695541481884@@127.0.0.1@3306@Dhan_Kharch
 -- Delete existing roles
 DROP ROLE IF EXISTS dk_admin@localhost;
 DROP ROLE IF EXISTS dk_manager@localhost;
@@ -36,6 +35,8 @@ REVOKE DELETE ON dhan_kharch.Users FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Accounts FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Budgets FROM dk_user@localhost;
 REVOKE DELETE ON dhan_kharch.Categories FROM dk_user@localhost;
+
+REVOKE DELETE ON dhan_kharch.UserBudgets FROM dk_user@localhost;
 
 -- Grant privileges to dk_guest role
 GRANT SELECT ON dhan_kharch.* TO dk_guest@localhost;
